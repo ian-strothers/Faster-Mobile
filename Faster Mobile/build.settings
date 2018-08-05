@@ -1,0 +1,46 @@
+-- Supported values for orientation:
+-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+
+settings = {
+
+	plugins = {
+		["CoronaProvider.gameNetwork.apple"] =
+        {
+            publisherId = "com.coronalabs",
+            supportedPlatforms = { iphone=true, ["iphone-sim"]=true },
+        },
+	},
+
+	orientation = {
+		content = {"portrait"},
+		default = "portrait",
+		supported = {--[["landscapeRight", "landscapeLeft",]] "portrait"}
+	},
+
+	iphone = {
+		plist = {
+			UIStatusBarHidden = true,
+			UIPrerenderedIcon = true, -- set to false for "shine" overlay
+
+			CFBundleShortVersionString = "1.1.6",
+
+			CFBundleIconFile = "Icon.png",
+			CFBundleIconFiles = {
+            	"Icon.png",
+            	"Icon@2x.png",
+            	"Icon-Small-40.png",
+            	"Icon-Small-40@2x.png",
+            	"Icon-60.png",
+            	"Icon-60@2x.png",
+            	"Icon-72.png",
+            	"Icon-72@2x.png",
+            	"Icon-76.png",
+            	"Icon-76@2x.png",
+            	"Icon-Small-50.png",
+            	"Icon-Small-50@2x.png",
+            	"Icon-Small.png",
+            	"Icon-Small@2x.png"
+            },
+		}
+	},
+}
